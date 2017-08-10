@@ -1,0 +1,30 @@
+
+
+ALTER TABLE movies
+ADD MPAA varchar(255);
+
+UPDATE movies
+SET MPAA = 'R'
+WHERE movieid = 1
+
+#4
+
+SELECT
+    *
+FROM
+    movies.tags;
+UPDATE tags
+SET tag = UPPER(tag)
+WHERE tags.id > 0
+
+
+#5
+
+#CREATE TABLE new_genreTable(movieid INT, genre_id INT);
+
+SELECT movies.movieid, genre.id
+FROM
+movies.movies,
+movies.genre
+WHERE movies.genres LIKE concat('%',genre.genres,'%');
+            

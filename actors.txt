@@ -1,20 +1,42 @@
 
 
+
+#1. & #2.
+
+use movies;
+
+INSERT INTO actors(name, charname, birth_date, movieid)
+Values ('Mike Sweeney', 'Mike Awesome','1900-01-01', 190),
+			('Jimmy Jacobson','Jimmy Amazing', '1910-01-01', 190),
+            ('Ryan Ryan', 'Robyn the Hood', '1920-01-01',190),
+            ('Ross Ross','Duran Duran', '1930-01-01', 238),
+            ('Mila Mila', 'Barbarella', '1940-01-01', 238),
+            ('Leah Leah', 'Ariel', '1950-01-01', 238),
+            ('Jordan Quinn', 'WonderWoman', '1980-01-01', 384),
+            ('Luke Luke', 'Skippy the Kangaroo', '1990-01-01', 384),
+           ('Richard Richard', 'Flipper', '2000-01-01', 238),
+			('Phil Schwartz', 'Wolvereen', '1960-01-01', 384)
+      
+      
+      
+      #3.
+use movies;
+
 ALTER TABLE movies
 ADD MPAA varchar(255);
 
-UPDATE movies
+UPDATE movies 
 SET MPAA = 'R'
 WHERE movieid = 1
 
 #4
 
-SELECT
+SELECT 
     *
 FROM
     movies.tags;
-UPDATE tags
-SET tag = UPPER(tag)
+UPDATE tags 
+SET tag = UPPER(tag)  
 WHERE tags.id > 0
 
 
@@ -27,4 +49,4 @@ FROM
 movies.movies,
 movies.genre
 WHERE movies.genres LIKE concat('%',genre.genres,'%');
-            
+      
